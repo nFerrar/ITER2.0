@@ -1,2 +1,117 @@
-# ITER2.0
-No longer a monolithic monstrosity.
+# Iter 2.0
+A text adventure engine written in Python. Now broken into smaller parts, no-longer being monolithic. We're going polylithic now.
+
+Conceptually, the idea of this little engine is flexibility through simplicity. Ideally anyone could grab this base engine and write their own little story driven adventure, or make a world to explore, even without Python experience.
+
+Some commenting has been done, and current build supports the following commands and mechanics
+
+# Player Commands
+
+move 
+---
+
+- moves the player to another room in a compass direction, however can navigate by any term. Room inventories are persistent
+
+examine 
+---
+
+- describes items and rooms.
+
+search 
+---
+
+- searches the current area, displaying all items currently visible.
+
+open 
+---
+
+- opens container items, adding their contents to the room and updating descriptions
+
+close 
+---
+
+- closes container items, either removing their contents from the room or removing them from themselves if the item has been picked up/moved
+
+take 
+---
+
+- takes an item from the room, adding it to the players inventory
+
+drop 
+---
+
+- drops the specified item from the player inventory into the room contents
+
+inventory 
+---
+
+- displays the players current inventory
+
+quit 
+---
+
+- quits from the game, no save function yet/ever. yolo
+
+talk
+---
+
+- lets you talk to NPCs!
+
+attack
+---
+
+- initiates combat with designated NPC, you can fight anyone.
+
+self
+---
+
+- works as examine for the PC, give you current stats and description.
+
+help 
+---
+
+- lists the available commands, without description. GLHF
+
+# Features:
+Zones can be marked as locked and require a specific item to be accessed, with the option of destroying the item upon entry, complete with flavour text.
+
+Events System! Items and zones can have Evens tagged to them, which can be triggered by actions such as:
+- Searching
+- examining
+- useing
+- picking up
+- dropping
+
+and they can be limited to running once or a set number of times. Or infintly.
+
+ALL NEW! You can now randomise events! Super grindy gameplay can now be implemented. yay.
+
+A limitation of the events system is that currently each action can only be performed once per event, however this can be cicumvented as events can trigger other events.
+
+ALL NEW COMBAT SYSTEM
+
+Currently bare bones, you can now be attacked by agressive NPCs, or initiate cmbat wth non-aggressive NPCs. Along with basic attacks, you can also attack an enemys Mind or Spirit. You can also define mutiple attack desciprtions for both the enemies and the player.
+
+Three types of things!
+
+- Items:
+
+Can be used, examined, sometimes pickupable, stack, can activate events.
+
+- Containers:
+
+Can be opened and closed, have an internal inventory, cant be picked up, can activate events.
+
+- Structures:
+
+Can only be examines and used, triggering events.
+
+Now with all new NPCs! These guys have names, stats, descriptions, inventories, and even limited conversational skills!
+
+# Known Bugs
+
+None, this may itself be a bug though.
+
+# To do, in something resembling an order of priority:
+
+?Quest System?
